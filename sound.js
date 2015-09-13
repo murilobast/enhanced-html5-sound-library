@@ -1,10 +1,5 @@
-Sound = function(file, volume, loop) {
-
-	// Build our sound object.
-	this.file = file;
-	this.volume = volume;
-	this.loop = loop;
-
+Sound = function(file, volume, loop, autoplay) {
+	
 	// This will construct our audio element and autoplay it.
 	this.play = function() {
 		this.audio = new Audio(this.file);
@@ -13,15 +8,22 @@ Sound = function(file, volume, loop) {
 		this.audio.play();
 	};
 
+	// Build our sound object.
+	this.file = file;
+	this.volume = volume;
+	this.loop = loop;
+
+	if (autoplay) this.play();
+
 	// This will change our audio object propriets.
-	this.change = function(volume, loop, auto, file) {
+	this.change = function(volume, loop, autoplay, file) {
 		//if file ins empty it'll not change
 		if (file) this.file = file;
 		this.volume = volume;
 		this.loop = loop;
 
-		// Check if its auto is true and then reconstruct our audio element.
-		if (auto) {
+		// Check if its autoplay is true and then reconstruct our audio element.
+		if (autoplay) {
 			this.play();
 
 		// If it's not, we are going to stop the audio so it can recieve the new atributes on the next play event.

@@ -34,26 +34,38 @@ Sound = function(file, volume, loop, autoplay) {
 
 	// This will act as a normal "Audio.pause()".
 	this.pause = function() {
-		if (!this.audio.paused) this.audio.pause();
+		if (this.audio) {
+			if (!this.audio.paused) this.audio.pause();
+		};
 	};
 
 	// This will resume the audio if it is paused.
 	this.resume = function() {
-		if (this.audio.paused) this.audio.play();
+		if (this.audio) {
+			if (this.audio.paused) this.audio.play();
+		} else {
+			this.play();
+		};
 	};
 
 	// This will act as a normal "Audio.muted = true".
 	this.mute = function() {
-		if (!this.audio.muted) this.audio.muted = true;		
+		if (this.audio) {
+			if (!this.audio.muted) this.audio.muted = true;		
+		};
 	};
 
 	// This will act as a normal "Audio.muted = false".
 	this.unmute = function() {
-		if (this.audio.muted) this.audio.muted = false;		
+		if (this.audio) {
+			if (this.audio.muted) this.audio.muted = false;		
+		};
 	};
 
 	// Return the audiofile duration's
 	this.duration = function() {
-		return this.audio.duration;
+		if (this.audio) {
+			return this.audio.duration;
+		};
 	}
 };

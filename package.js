@@ -1,6 +1,6 @@
 Package.describe({
 	name: 'murilobast:sound',
-	version: '1.0.0',
+	version: '1.0.1',
 	summary: 'Enhanced HTML5 audio library.',
 	git: 'http://github.com/murilobast/enhanced-html5-sound-library',
 	documentation: 'README.md'

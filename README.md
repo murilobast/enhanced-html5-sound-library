@@ -6,6 +6,7 @@ To create an audio element we need to provide four three parameters:
 - Volume (0.00 - 1.00).
 - Loop (true or false).
 - Autoplay (true or false).
+
 ```` js
  var myAudio = new Sound('/path/to/file.mp3', 1, true, false);
 ````
@@ -23,6 +24,10 @@ To create an audio element we need to provide four three parameters:
  myAudio.audio.audioPropertiesOrMethodNameHere; 
 ````
 
+### Changelog
+
+- 1.0.0 Initial release.
+- 1.0.1 Checking if the audio object exists before calling some functions.
 
 ### Me
 
